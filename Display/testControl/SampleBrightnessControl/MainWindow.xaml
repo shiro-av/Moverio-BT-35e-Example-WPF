@@ -1,0 +1,252 @@
+﻿<!--
+    //*********************************************************
+    //
+    // Copyright(C) Seiko Epson Corporation 2019. All rights reserved.
+    //
+    //*********************************************************
+-->
+
+<Controls:MetroWindow
+    x:Class="testControl.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="TestControl"
+    Width="794"
+    Height="460"
+    Closing="MetroWindow_Closing"
+    Loaded="MetroWindow_Loaded"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Grid Margin="3,-3,-3,3">
+        <Grid.Resources>
+            <Style x:Key="TextStyle" TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+            <Style
+                x:Key="BrightnessTextStyle"
+                BasedOn="{StaticResource TextStyle}"
+                TargetType="TextBlock">
+                <Setter Property="Margin" Value="2,2,20,2" />
+                <Setter Property="Width" Value="60" />
+                <Setter Property="TextAlignment" Value="Center" />
+            </Style>
+            <Style
+                x:Key="GetButton"
+                BasedOn="{StaticResource MetroButton}"
+                TargetType="Button">
+                <Setter Property="Width" Value="60" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="IsEnabled" Value="False" />
+            </Style>
+            <Style
+                x:Key="SetButton"
+                BasedOn="{StaticResource MetroButton}"
+                TargetType="Button">
+                <Setter Property="Width" Value="40" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="IsEnabled" Value="False" />
+            </Style>
+            <Style
+                x:Key="SetAutoButton"
+                BasedOn="{StaticResource MetroButton}"
+                TargetType="Button">
+                <Setter Property="Width" Value="82" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="IsEnabled" Value="False" />
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="268*"/>
+            <ColumnDefinition Width="213*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="147.44" />
+            <RowDefinition Height="6.16"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10,15,10,5" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBlock Style="{StaticResource TextStyle}" Text="Display ON/OFF :" />
+            <Button
+                x:Name="ButtonOff"
+                Click="SetDisplayOff_Click"
+                Content="OFF"
+                Style="{StaticResource GetButton}" />
+            <Button
+                x:Name="ButtonOn"
+                Click="SetDisplayOn_Click"
+                Content="ON"
+                Style="{StaticResource GetButton}" />
+        </StackPanel>
+
+        <StackPanel Margin="10,0,10,96" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock Style="{StaticResource TextStyle}" Text="Current State :" Height="28" />
+            <Button
+                x:Name="ButtonGetState"
+                Click="GetState_Click"
+                Content="Get"
+                Style="{StaticResource GetButton}" />
+            <TextBlock
+                x:Name="CurrentState"
+                Style="{StaticResource BrightnessTextStyle}"
+                Text="-" Width="569" />
+
+        </StackPanel>
+
+        <StackPanel Margin="11,56,9,40" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock Style="{StaticResource TextStyle}" Text="Set 2D/3D :" Height="28" />
+            <Button
+                x:Name="ButtonSet2D"
+                Click="Set2D_Click"
+                Content="2D"
+                Style="{StaticResource GetButton}" />
+            <Button
+                x:Name="ButtonSet3D"
+                Click="Set3D_Click"
+                Content="3D"
+                Style="{StaticResource GetButton}" />
+        </StackPanel>
+
+        <StackPanel Margin="9,96,11,7" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock Style="{StaticResource TextStyle}" Text="Current brightness :" />
+            <TextBlock
+                x:Name="CurrentBrightness"
+                Style="{StaticResource BrightnessTextStyle}"
+                Text="-" />
+            <Button
+                x:Name="ButtonGetBrightness"
+                Click="GetBrightness_Click"
+                Content="Get"
+                Style="{StaticResource GetButton}" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="9,140,11,-188" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <StackPanel Orientation="Horizontal" Margin="7,16,13,-56" Grid.Row="2" Grid.ColumnSpan="2">
+            <Button
+                    x:Name="ButtonLevel0"
+                    Click="SetBrightness_Click"
+                    Content="0"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel1"
+                    Click="SetBrightness_Click"
+                    Content="1"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel2"
+                    Click="SetBrightness_Click"
+                    Content="2"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel3"
+                    Click="SetBrightness_Click"
+                    Content="3"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel4"
+                    Click="SetBrightness_Click"
+                    Content="4"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel5"
+                    Click="SetBrightness_Click"
+                    Content="5"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel6"
+                    Click="SetBrightness_Click"
+                    Content="6"
+                    Style="{StaticResource SetButton}" />
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="7,71,13,-111" Grid.Row="2" Grid.ColumnSpan="2">
+            <Button
+                x:Name="ButtonLevel7"
+                Click="SetBrightness_Click"
+                Content="7"
+                Style="{StaticResource SetButton}" />
+            <Button
+                x:Name="ButtonLevel8"
+                Click="SetBrightness_Click"
+                Content="8"
+                Style="{StaticResource SetButton}" />
+            <Button
+                x:Name="ButtonLevel9"
+                Click="SetBrightness_Click"
+                Content="9"
+                Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel10"
+                    Click="SetBrightness_Click"
+                    Content="10"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel11"
+                    Click="SetBrightness_Click"
+                    Content="11"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel12"
+                    Click="SetBrightness_Click"
+                    Content="12"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel13"
+                    Click="SetBrightness_Click"
+                    Content="13"
+                    Style="{StaticResource SetButton}" />
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="7,127,13,-165" Grid.Row="2" Grid.ColumnSpan="2">
+            <Button
+                    x:Name="ButtonLevel14"
+                    Click="SetBrightness_Click"
+                    Content="14"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel15"
+                    Click="SetBrightness_Click"
+                    Content="15"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel16"
+                    Click="SetBrightness_Click"
+                    Content="16"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel17"
+                    Click="SetBrightness_Click"
+                    Content="17"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel18"
+                    Click="SetBrightness_Click"
+                    Content="18"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel19"
+                    Click="SetBrightness_Click"
+                    Content="19"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonLevel20"
+                    Click="SetBrightness_Click"
+                    Content="20"
+                    Style="{StaticResource SetButton}" />
+            <Button
+                    x:Name="ButtonAuto"
+                    Click="SetBrightnessAuto_Click"
+                    Content="Auto"
+                    Style="{StaticResource SetAutoButton}" />
+        </StackPanel>
+        <TextBlock Style="{StaticResource TextStyle}" Text="Set brightness :" Margin="11,129,13,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+    </Grid>
+</Controls:MetroWindow>

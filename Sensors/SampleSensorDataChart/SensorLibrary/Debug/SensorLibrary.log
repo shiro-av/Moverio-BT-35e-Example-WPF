@@ -1,0 +1,29 @@
+﻿  pch.cpp
+  AccelerometerSensor.cpp
+  AccelerometerSensorEvents.cpp
+  AccelerometerSensorManagerEvents.cpp
+  AggregatedDeviceOrientationSensor.cpp
+  AggregatedDeviceOrientationSensorEvents.cpp
+  AggregatedDeviceOrientationSensorManagerEvents.cpp
+  AmbientLightAwareSensorEvents.cpp
+  AmbientLightAwareSensorManagerEvents.cpp
+  AssemblyInfo.cpp
+  CompassSensor.cpp
+  CompassSensorEvents.cpp
+  CompassSensorManagerEvents.cpp
+  GravityVectorSensor.cpp
+  GravityVectorSensorEvents.cpp
+  GravityVectorSensorManagerEvents.cpp
+  GyrometerSensor.cpp
+  GyrometerSensorEvents.cpp
+  GyrometerSensorManagerEvents.cpp
+  LightSensor.cpp
+  LinearAccelerometerSensor.cpp
+  Создание кода...
+  Компиляция...
+  LinearAccelerometerSensorEvents.cpp
+  LinearAccelerometerSensorManagerEvents.cpp
+  Создание кода...
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  AccelerometerSensor.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  SensorLibrary.vcxproj -> C:\Users\student\Desktop\MoverioSampleProject_forWindows_1_0_0\wpf\Sensors\SampleSensorDataChart\Debug\SensorLibrary.dll

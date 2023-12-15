@@ -1,0 +1,1 @@
+C:\Users\student\Desktop\MoverioSampleProject_forWindows_1_0_0\wpf\Sensors\SampleSensorDataChart\SensorLibrary\Debug\SensorLibrary.vcxproj.AssemblyReference.cache
